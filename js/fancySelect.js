@@ -53,7 +53,8 @@
       }
       updateTriggerText = function() {
         var triggerHtml;
-        triggerHtml = settings.triggerTemplate(sel.find(':selected'));
+        // triggerHtml = settings.triggerTemplate(sel.find(':selected'));
+        triggerHtml = settings.triggerTemplate(sel.find('option').filter(function(){return this.selected === true;}));
         return trigger.html(triggerHtml);
       };
       sel.on('blur.fs', function() {
